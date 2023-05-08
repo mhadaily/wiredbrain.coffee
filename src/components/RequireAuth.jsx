@@ -1,16 +1,16 @@
-import React from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const RequireAuth = ({ isAuthenticated }) => {
+const RequireAuth = ({ isAuthenticated, children }) => {
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isAuthenticated) {
       navigate('/login');
     }
   }, [isAuthenticated, navigate]);
 
-  return isAuthenticated ? <Outlet /> : null;
+  return isAuthenticated ? children : null;
 };
 
 export default RequireAuth;

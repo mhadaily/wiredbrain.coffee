@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import logo from '../assets/logo.png';
+import { AuthContext } from '../logic/AuthContext';
 
-const Header = ({ isAuthenticated, user }) => {
-  const isAdmin = user && user.role === 'admin';
+const Header = () => {
+  const { isAdmin, isAuthenticated, currentUser } = useContext(AuthContext);
+  const [showUserMenu, useShowUserMenu] = useState(false);
+
+  const handleSubMenu = () => {
+    useShowUserMenu(!showUserMenu);
+  };
 
   return (
     <header className="bg-white py-4 border-b">
@@ -35,45 +41,51 @@ const Header = ({ isAuthenticated, user }) => {
           )}
           {isAuthenticated && (
             <>
-              <div className="relative inline-block text-left">
+              <div
+                onMouseEnter={handleSubMenu}
+                onMouseLeave={handleSubMenu}
+                className="relative inline-block text-left"
+              >
                 <button
                   type="button"
                   className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  {user.username}
+                  {currentUser.username}
                 </button>
-                <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                  <div
-                    className="py-1"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="options-menu"
-                  >
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
+                {showUserMenu && (
+                  <div className="z-10 origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
                     >
-                      Profile
-                    </Link>
-                    <Link
-                      to="/orders"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                    >
-                      Orders
-                    </Link>
-                    {isAdmin && (
                       <Link
-                        to="/admin"
+                        to="/profile"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
                       >
-                        Admin
+                        Profile
                       </Link>
-                    )}
+                      <Link
+                        to="/orders"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Orders
+                      </Link>
+                      {isAdmin && (
+                        <Link
+                          to="/admin"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          role="menuitem"
+                        >
+                          Admin
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               <Link to="/shop" className="text-gray-700 hover:text-gray-900">
                 Shop

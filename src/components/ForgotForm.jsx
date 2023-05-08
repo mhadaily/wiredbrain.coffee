@@ -12,7 +12,9 @@ const EmailPasswordForm = () => {
 
   return (
     <div className="max-w-xl mx-auto my-20 px-4">
-      <h1 class="text-3xl font-extrabold text-center mb-4 text-gray-900">Forgot your password?</h1>
+      <h1 className="text-3xl font-extrabold text-center mb-4 text-gray-900">
+        Forgot your password?
+      </h1>
       <div className="bg-white border rounded py-8 px-8">
         <form onSubmit={handleSubmit} className="card">
           <div className="mb-4">

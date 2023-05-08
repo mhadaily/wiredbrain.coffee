@@ -13,12 +13,12 @@ const EmailPasswordForm = () => {
 
   return (
     <div className="max-w-xl mx-auto my-20 px-4">
-      <h1 class="text-3xl font-extrabold text-center mb-4 text-gray-900">
+      <h1 className="text-3xl font-extrabold text-center mb-4 text-gray-900">
         Sign in to your account
       </h1>
-      <p class="text-center mb-4 italic text-gray-600">
+      <p className="text-center mb-4 italic text-gray-600">
         New to WireBrain.Coffee?&nbsp;
-        <Link class="text-indigo-700 hover:underline" to="/register">
+        <Link className="text-indigo-700 hover:underline" to="/register">
           Create an account
         </Link>
       </p>
@@ -84,7 +84,7 @@ const EmailPasswordForm = () => {
             <div className="px-2"></div>
             <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
               <svg
-                class="w-5 h-5 text-[#4285F4]"
+                className="w-5 h-5 text-[#4285F4]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
