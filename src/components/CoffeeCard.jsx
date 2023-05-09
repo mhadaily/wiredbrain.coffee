@@ -1,7 +1,15 @@
-import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../logic/AuthContext';
+import { Link } from 'react-router-dom';
 
 const CoffeeCard = ({ product }) => {
+  const { isAdmin } = useContext(AuthContext);
   const { id, name, description, images, price, metadata } = product;
+
+  const handleDeleteProduct = () => {
+    // handle delete product
+    console.log(product.id);
+  };
 
   return (
     <div key={id} className="bg-white rounded-lg shadow-md p-4 w-full">
@@ -22,6 +30,24 @@ const CoffeeCard = ({ product }) => {
           <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Add to Cart</button>
         </div>
       </div>
+
+      {isAdmin && (
+        <div className="flex justify-between items-end">
+          <div>
+            <button
+              onClick={handleDeleteProduct}
+              className="bg-red-600 text-white px-4 py-2 rounded-md"
+            >
+              Delete
+            </button>
+          </div>
+          <div>
+            <Link to={'/update-product'} className="bg-green-600 text-white px-4 py-2 rounded-md">
+              Update
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
