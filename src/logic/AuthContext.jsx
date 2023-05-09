@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
@@ -10,8 +10,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const user = { username: 'mhadaily' };
     setCurrentUser(user);
-    setIsAuthenticated(false);
-    setIsAdmin(false); //user && user.role === 'admin'
+    setIsAuthenticated(true);
+    setIsAdmin(true); //user && user.role === 'admin'
   }, []);
 
   return (
