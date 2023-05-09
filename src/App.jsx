@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import Admin from './pages/Admin';
 import Orders from './pages/Orders';
 import AddProduct from './pages/AddProduct';
+import UpdateProduct from './pages/UpdateProduct';
 import Cart from './pages/Cart';
 import RequireAuth from './components/RequireAuth';
 import { AuthContext } from './logic/AuthContext';
@@ -45,6 +46,14 @@ const App = () => {
         element={
           <RequireAuth isAuthenticated={isAdmin}>
             <AddProduct />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/update-product"
+        element={
+          <RequireAuth isAuthenticated={isAdmin}>
+            <UpdateProduct />
           </RequireAuth>
         }
       />

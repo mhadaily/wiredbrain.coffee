@@ -1,19 +1,19 @@
-// src/components/ProductForm.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const ProductForm = ({ onSubmit }) => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
-  const [price, setPrice] = useState('');
-  const [metadata, setMetadata] = useState({
-    strength: '',
-    origin: '',
-    type: 'coffee',
-    weight: '',
-    description: '',
-    variety: '',
-  });
+const ProductForm = ({ onSubmit, product }) => {
+  const [name, setName] = useState(product.name || '');
+  const [description, setDescription] = useState(product.description || '');
+  const [image, setImage] = useState(product.images[0] || '');
+  const [price, setPrice] = useState(product.price || 0);
+  const [metadata, setMetadata] = useState(
+    product.metadata || {
+      strength: '',
+      origin: '',
+      type: 'coffee',
+      weight: '',
+      variety: '',
+    }
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
