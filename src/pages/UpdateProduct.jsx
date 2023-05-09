@@ -17,7 +17,7 @@ const UpdateProduct = () => {
       <Header />
       {product ? (
         <div className="container max-w-xl mx-auto mt-8">
-          <h1 className="text-2xl font-semibold mb-4">Update "{product.name}"</h1>
+          <h1 className="text-2xl font-semibold mb-4">Update {product.name}</h1>
           <ProductForm onSubmit={handleUpdateProduct} product={product} />
         </div>
       ) : (
