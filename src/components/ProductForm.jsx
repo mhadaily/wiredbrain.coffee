@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const ProductForm = ({ onSubmit, product }) => {
-  const [name, setName] = useState(product.name || '');
-  const [description, setDescription] = useState(product.description || '');
-  const [image, setImage] = useState(product.images[0] || '');
-  const [price, setPrice] = useState(product.price || 0);
+  const [name, setName] = useState(product?.name || '');
+  const [description, setDescription] = useState(product?.description || '');
+  const [image, setImage] = useState(product?.images[0] || '');
+  const [price, setPrice] = useState(product?.price || 0);
   const [metadata, setMetadata] = useState(
-    product.metadata || {
+    product?.metadata || {
       strength: '',
       origin: '',
       type: 'coffee',

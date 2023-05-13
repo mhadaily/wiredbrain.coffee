@@ -1,10 +1,10 @@
 import ProductForm from '../components/ProductForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { addProduct } from '../firebase/firestore';
 const AddProduct = () => {
   const handleAddProduct = (product) => {
-    // Handle adding product to the database here
-    console.log('New product:', product);
+    addProduct(product);
   };
 
   return (

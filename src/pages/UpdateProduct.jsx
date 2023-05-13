@@ -1,15 +1,17 @@
 import ProductForm from '../components/ProductForm';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { updateProduct } from '../firebase/firestore';
 
 const UpdateProduct = () => {
   const { state } = useLocation();
+  const { navigate } = useNavigate();
   const product = state;
 
   const handleUpdateProduct = (coffee) => {
-    // Handle updating product to the database here
-    console.log('update product:', coffee);
+    updateProduct(coffee.id, coffee);
+    navigate(`/coffee/${coffee.id}`);
   };
 
   return (

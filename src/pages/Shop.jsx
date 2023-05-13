@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Header from '../components/Header';
 import CoffeeCard from '../components/CoffeeCard';
 import Footer from '../components/Footer';
