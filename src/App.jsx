@@ -9,6 +9,7 @@ import CoffeeDetails from './pages/CoffeeDetails';
 import Profile from './pages/Profile';
 import Admin from './pages/Admin';
 import Orders from './pages/Orders';
+import AdminOrders from './pages/AdminOrders';
 import AddProduct from './pages/AddProduct';
 import UpdateProduct from './pages/UpdateProduct';
 import Cart from './pages/Cart';
@@ -42,10 +43,18 @@ const App = () => {
         }
       />
       <Route
-        path="/add-product"
+        path="/admin/add-product"
         element={
           <RequireAuth isAuthenticated={isAdmin}>
             <AddProduct />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/admin/orders"
+        element={
+          <RequireAuth isAuthenticated={isAdmin}>
+            <AdminOrders />
           </RequireAuth>
         }
       />
@@ -65,6 +74,7 @@ const App = () => {
           </RequireAuth>
         }
       />
+
       <Route path="/cart" element={<Cart />} />
     </Routes>
   );

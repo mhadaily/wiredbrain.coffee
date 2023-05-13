@@ -4,7 +4,7 @@ const OrderCard = ({ order }) => {
       <h2 className="text-xl font-bold">Order #{order.id}</h2>
       <p className="text-gray-600">Status: {order.status}</p>
       <ul className="mt-4">
-        {order.items.map((item) => (
+        {order.items?.map((item) => (
           <li key={item.id} className="flex justify-between items-center">
             <div>
               {item.name} ({item.quantity})
