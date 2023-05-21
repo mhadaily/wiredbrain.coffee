@@ -50,9 +50,30 @@ const Header = () => {
               >
                 <button
                   type="button"
-                  className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="inline-flex justify-center w-full shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  {currentUser.username || currentUser.email}
+                  {currentUser.photoURL ? (
+                    <img
+                      className="w-8 h-8 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                      src={currentUser.photoURL}
+                      alt={currentUser.username || currentUser.email}
+                    />
+                  ) : (
+                    <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                      <svg
+                        className="absolute w-8 h-8 text-gray-400 -left-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  )}
                 </button>
                 {showUserMenu && (
                   <div className="z-10 origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
