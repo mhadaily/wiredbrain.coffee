@@ -1,0 +1,302 @@
+[
+  {
+    "id": "espressorost-ae2e0",
+    "name": "Espresso Roast",
+    "description": "A rich, dark, and intense coffee with a bold flavor.",
+    "images": ["https://source.unsplash.com/collection/962602/200x200?coffee"],
+    "price": 12.99,
+    "metadata": {
+      "strength": "Strong",
+      "origin": "Colombia",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A classic espresso roast with a smooth finish.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "houseblend-6f945",
+    "name": "House Blend",
+    "description": "A balanced and smooth blend of high-quality beans.",
+    "images": ["https://source.unsplash.com/collection/962602/201x200?coffee"],
+    "price": 10.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Brazil",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "Our signature house blend, perfect for any time of day.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "frenchroast-3d107",
+    "name": "French Roast",
+    "description": "A smoky and bold coffee with a full-bodied flavor.",
+    "images": ["https://source.unsplash.com/collection/962602/202x200?coffee"],
+    "price": 11.99,
+    "metadata": {
+      "strength": "Strong",
+      "origin": "Ethiopia",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A dark roast with a rich and smoky flavor.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "italianroast-4e2f0",
+    "name": "Italian Roast",
+    "description": "A robust and intense coffee with a dark chocolate finish.",
+    "images": ["https://source.unsplash.com/collection/962602/203x200?coffee"],
+    "price": 13.99,
+    "metadata": {
+      "strength": "Strong",
+      "origin": "Italy",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A bold roast with a rich and velvety taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "decafhouseblend-5f1d0",
+    "name": "Decaf House Blend",
+    "description": "A smooth and well-balanced decaffeinated blend.",
+    "images": ["https://source.unsplash.com/collection/962602/204x200?coffee"],
+    "price": 11.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Brazil",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "Our signature decaf blend, perfect for any time of day.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "sumatramandheling-1b3f0",
+    "name": "Sumatra Mandheling",
+    "description": "A full-bodied coffee with low acidity and earthy flavors.",
+    "images": ["https://source.unsplash.com/collection/962602/205x200?coffee"],
+    "price": 14.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Indonesia",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A rich and complex coffee with a smooth, earthy finish.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "guatemalantigua-7a9d2",
+    "name": "Guatemalan Antigua",
+    "description": "A medium-bodied coffee with a bright acidity and fruity notes.",
+    "images": ["https://source.unsplash.com/collection/962602/206x200?coffee"],
+    "price": 14.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Guatemala",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A well-balanced coffee with a hint of chocolate and citrus.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "costaricatarrazu-8c6e3",
+    "name": "Costa Rica Tarrazu",
+    "description": "A bright and lively coffee with a clean, crisp taste.",
+    "images": ["https://source.unsplash.com/collection/962602/207x200?coffee"],
+    "price": 15.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Costa Rica",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A well-rounded coffee with a vibrant and fruity flavor.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "colombiansupremo-9d5f4",
+    "name": "Colombian Supremo",
+    "description": "A balanced coffee with a rich flavor and mild acidity.",
+    "images": ["https://source.unsplash.com/collection/962602/208x200?coffee"],
+    "price": 13.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Colombia",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A classic Colombian coffee with a smooth and satisfying taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "ethiopianyirgacheffe-2a1b0",
+    "name": "Ethiopian Yirgacheffe",
+    "description": "A delicate and complex coffee with floral and fruity notes.",
+    "images": ["https://source.unsplash.com/collection/962602/209x200?coffee"],
+    "price": 16.99,
+    "metadata": {
+      "strength": "Light",
+      "origin": "Ethiopia",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A unique coffee with a bright and lively flavor profile.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "mexicanchiapas-3b2c1",
+    "name": "Mexican Chiapas",
+    "description": "A smooth coffee with a medium body and a sweet, nutty flavor.",
+    "images": ["https://source.unsplash.com/collection/962602/210x200?coffee"],
+    "price": 12.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Mexico",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A well-rounded coffee with a pleasant and balanced taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "kenya-4c3d2",
+    "name": "Kenya",
+    "description": "A bold and bright coffee with a wine-like acidity and fruity notes.",
+    "images": ["https://source.unsplash.com/collection/962602/211x200?coffee"],
+    "price": 17.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Kenya",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A distinctive coffee with a complex and vibrant flavor profile.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "tanzanianpeaberry-5d4e3",
+    "name": "Tanzanian Peaberry",
+    "description": "A medium-bodied coffee with a bright acidity and fruity flavors.",
+    "images": ["https://source.unsplash.com/collection/962602/212x200?coffee"],
+    "price": 15.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Tanzania",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A rare and unique coffee with a lively and tangy taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "jamaicanblue-6e5f4",
+    "name": "Jamaican Blue",
+    "description": "A smooth and well-balanced coffee with a rich, full-bodied flavor.",
+    "images": ["https://source.unsplash.com/collection/962602/213x200?coffee"],
+    "price": 19.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Jamaica",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A premium coffee with a luxurious and velvety taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "hawaiiankona-7f6g5",
+    "name": "Hawaiian Kona",
+    "description": "A medium-bodied coffee with a mild acidity and a smooth, buttery taste.",
+    "images": ["https://source.unsplash.com/collection/962602/214x200?coffee"],
+    "price": 22.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Hawaii",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "An exquisite coffee with a rich and silky flavor.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "peruvian-8g7h6",
+    "name": "Peruvian",
+    "description": "A medium-bodied coffee with a bright acidity and fruity, floral notes.",
+    "images": ["https://source.unsplash.com/collection/962602/215x200?coffee"],
+    "price": 13.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Peru",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A balanced coffee with a vibrant and complex flavor profile.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "panamaboquete-9h8i7",
+    "name": "Panama Boquete",
+    "description": "A bright and lively coffee with a clean, crisp taste.",
+    "images": ["https://source.unsplash.com/collection/962602/216x200?coffee"],
+    "price": 15.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Panama",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A well-rounded coffee with a sweet and citrusy flavor.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "nicaraguaselva-1i9j8",
+    "name": "Nicaragua Selva",
+    "description": "A medium-bodied coffee with a mild acidity and a smooth, rich taste.",
+    "images": ["https://source.unsplash.com/collection/962602/217x200?coffee"],
+    "price": 14.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Nicaragua",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A flavorful coffee with a pleasant and balanced taste.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "rwandareserve-2j1k9",
+    "name": "Rwanda Reserve",
+    "description": "A medium-bodied coffee with a bright acidity and fruity, floral notes.",
+    "images": ["https://source.unsplash.com/collection/962602/218x200?coffee"],
+    "price": 16.49,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "Rwanda",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A unique coffee with a vibrant and complex flavor profile.",
+      "variety": "Arabica"
+    }
+  },
+  {
+    "id": "indiaplantation-3k2l0",
+    "name": "India Plantation",
+    "description": "A full-bodied coffee with low acidity and earthy, spicy flavors.",
+    "images": ["https://source.unsplash.com/collection/962602/219x200?coffee"],
+    "price": 14.99,
+    "metadata": {
+      "strength": "Medium",
+      "origin": "India",
+      "type": "coffee",
+      "weight": "1 lb",
+      "description": "A rich and complex coffee with a smooth, bold finish.",
+      "variety": "Arabica"
+    }
+  }
+]
