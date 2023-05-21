@@ -8,11 +8,11 @@ const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthChange(setCurrentUser);
+    const unsubscribe = onAuthChange(setCurrentUser, setIsAdmin);
     // const user = { username: 'mhadaily' };
     //setCurrentUser(user);
     //setIsAuthenticated(true);
-    setIsAdmin(false); //user && user.role === 'admin'
+    //setIsAdmin(false); //user && user.role === 'admin'
 
     return unsubscribe;
   }, []);

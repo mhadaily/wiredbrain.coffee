@@ -5,16 +5,25 @@ import { CartContext } from '../logic/CartContext';
 import { ProductsContext } from '../logic/ProductsContext';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import { decreaseQuantity, increaseQuantity } from '../firebase/firestore';
+import { submitCartToUserOrder } from '../firebase/functions';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
   const { products } = useContext(ProductsContext);
+  const navigation = useNavigate();
 
   const handleDecrease = (productId) => {
     decreaseQuantity(productId);
   };
   const handleIncrease = (productId) => {
     increaseQuantity(productId);
+  };
+
+  const submitOrder = () => {
+    submitCartToUserOrder().then(() => {
+      navigation('/orders');
+    });
   };
 
   return (
@@ -86,6 +95,14 @@ const Cart = () => {
                 })}
               </tbody>
             </table>
+            <div className="m-10">
+              <button
+                className="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded"
+                onClick={submitOrder}
+              >
+                Submit your order
+              </button>
+            </div>
           </div>
         )}
       </div>

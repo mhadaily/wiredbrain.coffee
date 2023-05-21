@@ -12,5 +12,8 @@
   "rules": {
     "react-refresh/only-export-components": "warn",
     "react/prop-types": 0
-  }
+  },
+  "ignorePatterns": [
+    "/functions/**/*" // Ignore built files.
+  ]
 }

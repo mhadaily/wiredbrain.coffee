@@ -129,3 +129,11 @@ export function decreaseQuantity(productId) {
       console.log('Error getting document:', error);
     });
 }
+
+export async function getUserDocAndSetAdmin(setIsAdmin) {
+  const userId = auth.currentUser.uid;
+  const userDocRef = doc(db, `users/${userId}`);
+  const userDataSnap = await getDoc(userDocRef);
+  const userData = userDataSnap.data();
+  setIsAdmin(userData?.role === 'admin');
+}
