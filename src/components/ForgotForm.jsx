@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiTwitter } from 'react-icons/fi';
+import { useState } from 'react';
+import { forgotPassword } from '../firebase/auth';
 
 const EmailPasswordForm = () => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email });
+    forgotPassword(email);
   };
 
   return (

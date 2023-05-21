@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import CoffeeCard from '../components/CoffeeCard';
 import { ProductsContext } from '../logic/ProductsContext';
 

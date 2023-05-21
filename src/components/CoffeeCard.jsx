@@ -1,11 +1,19 @@
 import { useContext } from 'react';
 import { AuthContext } from '../logic/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { deleteProduct } from '../firebase/firestore';
+import { deleteProduct, increaseQuantity } from '../firebase/firestore';
 
 const CoffeeCard = ({ product }) => {
-  const { isAdmin } = useContext(AuthContext);
+  const { isAdmin, currentUser, isAuthenticated } = useContext(AuthContext);
   const { navigate } = useNavigate();
+
+  const addToCart = (productId) => {
+    if (currentUser) {
+      increaseQuantity(productId);
+    } else {
+      navigate('/login');
+    }
+  };
 
   const handleDeleteProduct = () => {
     deleteProduct(product.id);
@@ -28,7 +36,14 @@ const CoffeeCard = ({ product }) => {
         </div>
         <div>
           <p className="text-xl font-bold">${product.price.toFixed(2)}</p>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Add to Cart</button>
+          {isAuthenticated && (
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded-md"
+              onClick={() => addToCart(product.id)}
+            >
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
 

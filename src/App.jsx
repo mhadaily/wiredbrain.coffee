@@ -21,9 +21,30 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<SignIn />} />
-      <Route path="/register" element={<SignUp />} />
-      <Route path="/forgot" element={<Forgot />} />
+      <Route
+        path="/login"
+        element={
+          <RequireAuth customPath={'/profile'} isAuthenticated={!isAuthenticated}>
+            <SignIn />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <RequireAuth customPath={'/profile'} isAuthenticated={!isAuthenticated}>
+            <SignUp />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/forgot"
+        element={
+          <RequireAuth customPath={'/profile'} isAuthenticated={!isAuthenticated}>
+            <Forgot />
+          </RequireAuth>
+        }
+      />
       <Route path="/shop" element={<Shop />} />
       <Route path="/coffee/:id" element={<CoffeeDetails />} />
       <Route
@@ -75,7 +96,14 @@ const App = () => {
         }
       />
 
-      <Route path="/cart" element={<Cart />} />
+      <Route
+        path="/cart"
+        element={
+          <RequireAuth isAuthenticated={isAuthenticated}>
+            <Cart />
+          </RequireAuth>
+        }
+      />
     </Routes>
   );
 };

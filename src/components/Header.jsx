@@ -1,15 +1,17 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import logo from '../assets/logo.png';
 import { AuthContext } from '../logic/AuthContext';
+import { CartContext } from '../logic/CartContext';
 
 const Header = () => {
   const { isAdmin, isAuthenticated, currentUser } = useContext(AuthContext);
-  const [showUserMenu, useShowUserMenu] = useState(false);
+  const { cart } = useContext(CartContext);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   const handleSubMenu = () => {
-    useShowUserMenu(!showUserMenu);
+    setShowUserMenu(!showUserMenu);
   };
 
   return (
@@ -50,7 +52,7 @@ const Header = () => {
                   type="button"
                   className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  {currentUser.username}
+                  {currentUser.username || currentUser.email}
                 </button>
                 {showUserMenu && (
                   <div className="z-10 origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
@@ -90,7 +92,14 @@ const Header = () => {
               <Link to="/shop" className="text-gray-700 hover:text-gray-900">
                 Shop
               </Link>
-              <Link to="/cart" className="text-gray-700 hover:text-gray-900">
+              <Link to="/cart" className="relative text-gray-700 hover:text-gray-900">
+                {cart?.length > 0 && (
+                  <div className="left-4 -top-4 absolute ">
+                    <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                      {cart.reduce((acc, item) => (acc += item.quantity), 0)}
+                    </p>
+                  </div>
+                )}
                 <FiShoppingCart size={24} />
               </Link>
             </>

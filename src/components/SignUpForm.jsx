@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { signUpWithEmailPassword } from '../firebase/auth';
 
 const SignUpForm = () => {
   const [email, setEmail] = useState('');
@@ -6,7 +7,7 @@ const SignUpForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    signUpWithEmailPassword({ email, password });
   };
 
   return (

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiTwitter } from 'react-icons/fi';
+import { SignInWithTwitter, loginWithEmailPassword } from '../firebase/auth';
 
 const EmailPasswordForm = () => {
   const [email, setEmail] = useState('');
@@ -8,7 +9,11 @@ const EmailPasswordForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    loginWithEmailPassword({ email, password });
+  };
+
+  const handleTwitterLogin = () => {
+    SignInWithTwitter();
   };
 
   return (
@@ -78,7 +83,10 @@ const EmailPasswordForm = () => {
             </div>
           </div>
           <div className="mt-4 flex justify-between	">
-            <button className="w-full inline-flex justify-center  py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+            <button
+              onClick={handleTwitterLogin}
+              className="w-full inline-flex justify-center  py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+            >
               <FiTwitter size={24} />
             </button>
             <div className="px-2"></div>

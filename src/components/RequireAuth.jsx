@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const RequireAuth = ({ isAuthenticated, children }) => {
+const RequireAuth = ({ customPath, isAuthenticated, children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate('/login');
+      navigate(customPath || '/login');
     }
-  }, [isAuthenticated, navigate]);
+  }, [customPath, isAuthenticated, navigate]);
 
   return isAuthenticated ? children : null;
 };

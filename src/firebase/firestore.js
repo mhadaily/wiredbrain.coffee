@@ -9,11 +9,14 @@ import {
   collectionGroup,
   where,
   orderBy,
+  getDoc,
+  updateDoc,
 } from 'firebase/firestore';
-import { db } from './firebase';
+import { auth, db } from './firebase';
 
 const PRODUCT_COLLECTION = 'products';
 const ORDERS_COLLECTION = 'orders';
+const USERS_COLLECTION = 'users';
 
 export function addProduct(data) {
   addDoc(collection(db, PRODUCT_COLLECTION), data);
@@ -30,7 +33,7 @@ export function deleteProduct(docId) {
 function convertMapToList(allProducts) {
   let productsList = [];
   Object.keys(allProducts).forEach((id) => {
-    productsList.push(allProducts[id]);
+    productsList.push({ ...allProducts[id], id });
   });
   return productsList;
 }
@@ -65,4 +68,64 @@ export function getOrders(setOrders) {
   });
 
   return unsubscribe;
+}
+
+export function getUserCart(setUserCart) {
+  const userId = auth.currentUser.uid;
+  const q = doc(db, `${USERS_COLLECTION}/${userId}`);
+
+  const unsubscribe = onSnapshot(q, (snapshot) => {
+    const data = snapshot.data();
+    setUserCart(data?.cart || []);
+  });
+  return unsubscribe;
+}
+
+// Function to increase quantity
+export function increaseQuantity(productId) {
+  const userId = auth.currentUser.uid;
+  const userRef = doc(db, `${USERS_COLLECTION}/${userId}`);
+  getDoc(userRef)
+    .then((doc) => {
+      if (doc.exists) {
+        let items = doc.data()?.cart || [];
+        let item = items.find((item) => item.productId === productId);
+        if (item) {
+          item.quantity++;
+        } else {
+          items.push({ productId: productId, quantity: 1 });
+        }
+        return setDoc(userRef, { cart: items }, { merge: true });
+      } else {
+        console.log('No such document!');
+      }
+    })
+    .catch((error) => {
+      console.log('Error getting document:', error);
+    });
+}
+
+// Function to decrease quantity
+export function decreaseQuantity(productId) {
+  const userId = auth.currentUser.uid;
+  const userRef = doc(db, `${USERS_COLLECTION}/${userId}`);
+  getDoc(userRef)
+    .then((doc) => {
+      if (doc.exists) {
+        let items = doc.data()?.cart || [];
+        let item = items.find((item) => item.productId === productId);
+        if (item) {
+          item.quantity--;
+          if (item.quantity === 0) {
+            items = items.filter((item) => item.productId !== productId);
+          }
+        }
+        return updateDoc(userRef, { cart: items });
+      } else {
+        console.log('No such document!');
+      }
+    })
+    .catch((error) => {
+      console.log('Error getting document:', error);
+    });
 }
