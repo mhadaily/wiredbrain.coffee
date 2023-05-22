@@ -1,5 +1,13 @@
 {
   "projects": {
     "default": "wiredbrain-coffee"
+  },
+  "targets": {},
+  "etags": {
+    "wiredbrain-coffee": {
+      "extensionInstances": {
+        "firestore-send-email": "52a95be022e7c1a3f02b340f34de2a558c36d5f2726f9de7f08889cd3e88e143"
+      }
+    }
   }
 }
